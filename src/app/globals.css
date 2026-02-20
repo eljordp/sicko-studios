@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #000000;
+  --color-background: #0a0a0a;
   --color-foreground: #f5f5f5;
   --color-accent: #c8102e;
   --color-accent-dark: #a00d24;
-  --color-accent-glow: rgba(200, 16, 46, 0.2);
-  --color-warm: #e8e4e0;
+  --color-stone: #b8a898;
   --color-gray: #8a8a8a;
   --color-gray-dark: #1a1a1a;
-  --color-gray-darker: #0d0d0d;
-  --font-sans: var(--font-geist-sans);
+  --color-gray-darker: #0f0f0f;
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
 }
 
 * {
@@ -18,9 +19,19 @@
 }
 
 body {
-  background: #000000;
+  background: #0a0a0a;
   color: #f5f5f5;
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Heading font utility */
+.font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+/* Mono font utility */
+.font-mono {
+  font-family: var(--font-mono), monospace;
 }
 
 /* Video placeholder shimmer */
@@ -30,19 +41,14 @@ body {
 }
 
 .video-placeholder {
-  background: linear-gradient(90deg, #0d0d0d 25%, #1a1a1a 50%, #0d0d0d 75%);
+  background: linear-gradient(90deg, #0f0f0f 25%, #1a1a1a 50%, #0f0f0f 75%);
   background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 4s ease-in-out infinite;
 }
 
-/* Soft white glow for featured elements */
+/* Subtle warm glow for featured elements */
 .card-glow {
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.04), 0 0 80px rgba(255, 255, 255, 0.02);
-}
-
-/* Subtle accent glow — used sparingly */
-.accent-glow {
-  box-shadow: 0 0 40px rgba(200, 16, 46, 0.1), 0 0 80px rgba(200, 16, 46, 0.03);
+  box-shadow: 0 0 60px rgba(184, 168, 152, 0.06), 0 0 120px rgba(184, 168, 152, 0.03);
 }
 
 /* Subtle grain texture */
@@ -57,4 +63,9 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 50;
+}
+
+/* Cinematic aspect ratio */
+.aspect-cinematic {
+  aspect-ratio: 2.39 / 1;
 }

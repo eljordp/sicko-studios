@@ -1,3 +1,7 @@
+"use client";
+
+import AnimateIn from "./AnimateIn";
+
 const packages = [
   {
     name: "Starter",
@@ -51,85 +55,91 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-px bg-white/30" />
-          <p className="text-white/50 text-sm uppercase tracking-[0.3em] font-medium">
-            Pricing
+    <section id="packages" className="py-32 md:py-40 px-8">
+      <div className="max-w-[1400px] mx-auto">
+        <AnimateIn>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-xs text-white/25">03</span>
+            <div className="w-12 h-px bg-white/15" />
+            <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
+              Pricing
+            </p>
+          </div>
+          <h2 className="font-heading font-light text-4xl md:text-6xl tracking-tight mb-6 leading-tight">
+            Packages that scale.
+          </h2>
+          <p className="text-gray text-lg font-light mb-20 max-w-xl">
+            No hidden fees. No contracts. Just consistent, high-quality content
+            for your business.
           </p>
-        </div>
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Packages that scale.
-        </h2>
-        <p className="text-gray text-lg mb-16 max-w-xl">
-          No hidden fees. No contracts. Just consistent, high-quality content
-          for your business.
-        </p>
+        </AnimateIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {packages.map((pkg, i) => (
-            <div
-              key={i}
-              className={`relative border p-8 flex flex-col ${
-                pkg.featured
-                  ? "border-white/20 bg-white/[0.02] card-glow"
-                  : "border-white/5 hover:border-white/15"
-              } transition-colors`}
-            >
-              {pkg.featured && (
-                <div className="absolute -top-3 left-8 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
-                  Popular
-                </div>
-              )}
-              <h3 className="text-lg font-bold uppercase tracking-wider">
-                {pkg.name}
-              </h3>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-bold">{pkg.price}</span>
-                <span className="text-gray text-sm">{pkg.period}</span>
-              </div>
-              <p className="text-gray text-sm mt-2">{pkg.description}</p>
-              <ul className="mt-8 space-y-3 flex-1">
-                {pkg.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm">
-                    <span className="text-white/40 mt-0.5">&#10003;</span>
-                    <span className="text-gray">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className={`mt-8 block text-center font-medium text-sm uppercase tracking-wider py-3.5 transition-colors ${
+            <AnimateIn key={i} delay={i * 0.1}>
+              <div
+                className={`relative p-10 md:p-12 flex flex-col h-full transition-all duration-700 ${
                   pkg.featured
-                    ? "bg-white text-black hover:bg-white/85"
-                    : "border border-white/15 hover:border-white/40 text-white"
+                    ? "bg-white/[0.03] border border-white/15 card-glow"
+                    : "border border-white/5 hover:border-white/15 hover:bg-white/[0.01]"
                 }`}
               >
-                {pkg.cta}
-              </a>
-            </div>
+                {pkg.featured && (
+                  <div className="absolute -top-3 left-10 bg-accent text-white text-[10px] font-medium uppercase tracking-[0.15em] px-3 py-1">
+                    Popular
+                  </div>
+                )}
+                <h3 className="font-heading text-2xl font-light tracking-tight">
+                  {pkg.name}
+                </h3>
+                <div className="mt-6 flex items-baseline gap-1">
+                  <span className="font-heading text-5xl font-light">{pkg.price}</span>
+                  <span className="text-white/30 text-sm">{pkg.period}</span>
+                </div>
+                <p className="text-gray text-sm mt-3 font-light">{pkg.description}</p>
+                <ul className="mt-10 space-y-4 flex-1">
+                  {pkg.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm">
+                      <span className="text-white/25 mt-0.5">&#10003;</span>
+                      <span className="text-white/60 font-light">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className={`mt-10 block text-center text-xs uppercase tracking-[0.15em] py-4 transition-all duration-500 ${
+                    pkg.featured
+                      ? "bg-white text-black font-medium hover:bg-white/85"
+                      : "border border-white/10 hover:border-white/30 text-white font-light"
+                  }`}
+                >
+                  {pkg.cta}
+                </a>
+              </div>
+            </AnimateIn>
           ))}
         </div>
 
         {/* Add-ons */}
-        <div className="mt-16 border border-white/5 p-8">
-          <h3 className="text-lg font-bold uppercase tracking-wider mb-6">
-            One-Time Add-Ons
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { name: "Commercial Spot", price: "From $1,500" },
-              { name: "Event Coverage", price: "From $800" },
-              { name: "Product / Headshot Shoot", price: "From $500" },
-            ].map((addon, i) => (
-              <div key={i} className="flex justify-between items-center border-b border-white/5 pb-4">
-                <span className="text-sm">{addon.name}</span>
-                <span className="text-white text-sm font-medium">{addon.price}</span>
-              </div>
-            ))}
+        <AnimateIn>
+          <div className="mt-20 border border-white/5 p-10 md:p-12">
+            <h3 className="font-heading text-2xl font-light tracking-tight mb-8">
+              One-Time Add-Ons
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {[
+                { name: "Commercial Spot", price: "From $1,500" },
+                { name: "Event Coverage", price: "From $800" },
+                { name: "Product / Headshot Shoot", price: "From $500" },
+              ].map((addon, i) => (
+                <div key={i} className="flex justify-between items-center border-b border-white/5 pb-4">
+                  <span className="text-sm font-light">{addon.name}</span>
+                  <span className="text-sm text-stone font-mono">{addon.price}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );
