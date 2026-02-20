@@ -54,13 +54,13 @@ export default function Packages() {
     <section id="packages" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-px bg-red" />
-          <p className="text-red text-sm uppercase tracking-[0.3em] font-medium">
+          <div className="w-12 h-px bg-white/30" />
+          <p className="text-white/50 text-sm uppercase tracking-[0.3em] font-medium">
             Pricing
           </p>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Packages that <span className="text-red">scale.</span>
+          Packages that scale.
         </h2>
         <p className="text-gray text-lg mb-16 max-w-xl">
           No hidden fees. No contracts. Just consistent, high-quality content
@@ -73,12 +73,12 @@ export default function Packages() {
               key={i}
               className={`relative border p-8 flex flex-col ${
                 pkg.featured
-                  ? "border-red bg-red/5 red-glow"
-                  : "border-white/10 hover:border-white/20"
+                  ? "border-white/20 bg-white/[0.02] card-glow"
+                  : "border-white/5 hover:border-white/15"
               } transition-colors`}
             >
               {pkg.featured && (
-                <div className="absolute -top-3 left-8 bg-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
+                <div className="absolute -top-3 left-8 bg-accent text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
                   Popular
                 </div>
               )}
@@ -93,7 +93,7 @@ export default function Packages() {
               <ul className="mt-8 space-y-3 flex-1">
                 {pkg.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3 text-sm">
-                    <span className="text-red mt-0.5">&#10003;</span>
+                    <span className="text-white/40 mt-0.5">&#10003;</span>
                     <span className="text-gray">{feature}</span>
                   </li>
                 ))}
@@ -102,8 +102,8 @@ export default function Packages() {
                 href="#contact"
                 className={`mt-8 block text-center font-medium text-sm uppercase tracking-wider py-3.5 transition-colors ${
                   pkg.featured
-                    ? "bg-red hover:bg-red-dark text-white"
-                    : "border border-white/20 hover:border-red hover:text-red text-white"
+                    ? "bg-white text-black hover:bg-white/85"
+                    : "border border-white/15 hover:border-white/40 text-white"
                 }`}
               >
                 {pkg.cta}
@@ -125,7 +125,7 @@ export default function Packages() {
             ].map((addon, i) => (
               <div key={i} className="flex justify-between items-center border-b border-white/5 pb-4">
                 <span className="text-sm">{addon.name}</span>
-                <span className="text-red text-sm font-medium">{addon.price}</span>
+                <span className="text-white text-sm font-medium">{addon.price}</span>
               </div>
             ))}
           </div>

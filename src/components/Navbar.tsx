@@ -3,7 +3,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-2xl font-bold tracking-tighter">
-          SICKO<span className="text-red">.</span>
+          SICKO<span className="text-accent">.</span>
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-gray uppercase tracking-widest">
           <a href="#work" className="hover:text-white transition-colors">Work</a>
@@ -13,7 +13,7 @@ export default function Navbar() {
         </div>
         <a
           href="#contact"
-          className="bg-red hover:bg-red-dark text-white text-sm font-medium px-5 py-2.5 transition-colors"
+          className="bg-white text-black text-sm font-medium px-5 py-2.5 hover:bg-white/85 transition-colors"
         >
           Get a Quote
         </a>

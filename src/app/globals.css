@@ -2,13 +2,14 @@
 
 @theme inline {
   --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-red: #e11d48;
-  --color-red-dark: #be123c;
-  --color-red-glow: rgba(225, 29, 72, 0.3);
-  --color-gray: #a1a1aa;
-  --color-gray-dark: #27272a;
-  --color-gray-darker: #18181b;
+  --color-foreground: #f5f5f5;
+  --color-accent: #c8102e;
+  --color-accent-dark: #a00d24;
+  --color-accent-glow: rgba(200, 16, 46, 0.2);
+  --color-warm: #e8e4e0;
+  --color-gray: #8a8a8a;
+  --color-gray-dark: #1a1a1a;
+  --color-gray-darker: #0d0d0d;
   --font-sans: var(--font-geist-sans);
 }
 
@@ -18,7 +19,7 @@
 
 body {
   background: #000000;
-  color: #ffffff;
+  color: #f5f5f5;
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -29,14 +30,19 @@ body {
 }
 
 .video-placeholder {
-  background: linear-gradient(90deg, #18181b 25%, #27272a 50%, #18181b 75%);
+  background: linear-gradient(90deg, #0d0d0d 25%, #1a1a1a 50%, #0d0d0d 75%);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
 
-/* Red glow effect */
-.red-glow {
-  box-shadow: 0 0 40px rgba(225, 29, 72, 0.15), 0 0 80px rgba(225, 29, 72, 0.05);
+/* Soft white glow for featured elements */
+.card-glow {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.04), 0 0 80px rgba(255, 255, 255, 0.02);
+}
+
+/* Subtle accent glow — used sparingly */
+.accent-glow {
+  box-shadow: 0 0 40px rgba(200, 16, 46, 0.1), 0 0 80px rgba(200, 16, 46, 0.03);
 }
 
 /* Subtle grain texture */
