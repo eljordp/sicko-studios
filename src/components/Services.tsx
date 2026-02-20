@@ -87,8 +87,8 @@ export default function Services() {
             <div className="flex-1">
               <p className="text-lg font-light mb-2">Cinema-grade color science</p>
               <p className="text-gray text-sm leading-relaxed">
-                Full-frame sensor. S-Cinetone color profiles. Professional LUT-based color grading
-                in DaVinci Resolve. The same imaging pipeline used in Hollywood productions — now working for your brand.
+                Full-frame sensor. S-Cinetone color profiles. Composed in Premiere Pro.
+                Color graded in DaVinci Resolve. The same imaging pipeline used in Hollywood — now working for your brand.
               </p>
             </div>
             <div className="hidden lg:flex flex-col gap-3 text-right shrink-0">
@@ -99,6 +99,10 @@ export default function Services() {
               <div>
                 <div className="font-mono text-[10px] text-white/25 uppercase tracking-wider">Color</div>
                 <div className="text-sm font-light">S-Cinetone / S-Log3</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] text-white/25 uppercase tracking-wider">Edit</div>
+                <div className="text-sm font-light">Premiere Pro</div>
               </div>
               <div>
                 <div className="font-mono text-[10px] text-white/25 uppercase tracking-wider">Grade</div>

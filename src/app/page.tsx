@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Showreel from "@/components/Showreel";
 import Services from "@/components/Services";
+import ColorGrade from "@/components/ColorGrade";
 import Packages from "@/components/Packages";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Showreel />
       <Services />
+      <ColorGrade />
       <Packages />
       <Contact />
       <Footer />
